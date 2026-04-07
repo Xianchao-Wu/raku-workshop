@@ -2,8 +2,8 @@
 sft:
   ## total number of steps to train will equal
   ## min((max_num_epochs * len(train_dataloader)), max_num_steps)
-  max_num_epochs: 2
-  max_num_steps: 55 
+  max_num_epochs: 1 # 2 TODO
+  max_num_steps: 5 # 55 TODO  
  
   val_period: 10
   val_batches: 4 
@@ -28,7 +28,7 @@ policy:
     # chat_template can be a Jinja template string or path to a .jinja file 
     chat_template: "{% for message in messages %}{%- if message['role'] == 'system'  %}{{'Context: ' + message['content'].strip()}}{%- elif message['role'] == 'user'  %}{{' Question: ' + message['content'].strip() + ' Answer:'}}{%- elif message['role'] == 'assistant'  %}{{' ' + message['content'].strip()}}{%- endif %}{% endfor %}"
     chat_template_kwargs: null # can be used to pass kwargs to the chat template, e.g., enable_thinking=true
-  train_global_batch_size: 256 
+  train_global_batch_size: 4 # 256 TODO 
   train_micro_batch_size: 1
   max_total_sequence_length: 2048 
   precision: "bfloat16"
@@ -151,8 +151,8 @@ data:
   num_workers: 1
  
   dataset_name: "openai_format"
-  train_data_path: {train synthesis data path}
-  val_data_path: {valid synthesis data path}
+  train_data_path: "simple_format_arrange/jcommonsenseqa_train_90.jsonl" #{train synthesis data path} # TODO 
+  val_data_path: "simple_format_arrange/jcommonsenseqa_valid_10.jsonl" #{valid synthesis data path} # TODO
   chat_key: "messages"                     # Key for messages in the data
   system_key: null                         # Key for system message (optional)
   system_prompt: null                      # Default system prompt (optional)
