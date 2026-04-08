@@ -1,3 +1,6 @@
+pip install "nemoguardrails[nvidia]"
+
+
 https://docs.nvidia.com/nemo/guardrails/latest/getting-started/tutorials/index.html
 
 
