@@ -23,7 +23,7 @@ rails:
       reasoning:
         # Set to true for reasoning mode (with <think> traces)
         # Set to false for low-latency mode
-        enabled: false
+        enabled: true #false
 
   input:
     flows:
